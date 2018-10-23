@@ -12,5 +12,7 @@ logs
 target
 *.iml
 .idea
+mvnw
+mvnw.cmd
 */target/
 */.mvn/
