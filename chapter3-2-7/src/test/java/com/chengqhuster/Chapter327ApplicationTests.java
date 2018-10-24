@@ -9,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Chapter327Application.class)
+@Transactional
 public class Chapter327ApplicationTests {
 
     // UserMapper是个接口，spring启动后会有相关的实现bean，可以扫描到
@@ -22,8 +24,8 @@ public class Chapter327ApplicationTests {
     @Test
     @Rollback
     public void test() {
-        userMapper.insert("ddd", 20);
-        User u = userMapper.findByName("ddd");
+        userMapper.insert("eee", 20);
+        User u = userMapper.findByName("eee");
         Assert.assertEquals(20, u.getAge().intValue());
     }
 
