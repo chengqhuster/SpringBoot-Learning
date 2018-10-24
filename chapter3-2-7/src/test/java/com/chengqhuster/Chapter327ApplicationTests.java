@@ -11,6 +11,8 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Chapter327Application.class)
 @Transactional
@@ -29,4 +31,13 @@ public class Chapter327ApplicationTests {
         Assert.assertEquals(20, u.getAge().intValue());
     }
 
+    @Test
+    public void resultMapTest() {
+        List<User> userList = userMapper.findAll();
+        for (User user : userList) {
+            Assert.assertEquals(null, user.getId());
+            Assert.assertNotEquals(null, user.getName());
+            System.out.println("User info[name : " + user.getName() + ", age : " + user.getAge() + "]");
+        }
+    }
 }
