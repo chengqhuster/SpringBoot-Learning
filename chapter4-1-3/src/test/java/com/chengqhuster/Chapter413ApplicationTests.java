@@ -21,6 +21,8 @@ public class Chapter413ApplicationTests {
         task.doTaskTwo();
         task.doTaskThree();
 
+        // 阻塞并等待当前线程结束（it will never happen）
+        // 这里为了防止在观察其他线程状态时当前线程结束，项目代码中不要这种写法
         Thread.currentThread().join();
     }
 
