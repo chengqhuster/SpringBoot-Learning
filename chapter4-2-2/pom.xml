@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>chapter4-2-2</name>
-	<description>log4j configuration</description>
+	<description>log4j2 configuration</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -38,7 +38,7 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-log4j</artifactId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
 
 		<dependency>
