@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
+    <Appenders>
+
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} %5p %c{1}:%L - %m%n"/>
+        </Console>
+
+        <RollingFile name="allLog" fileName="logs/all.log" filePattern="logs/app-%d{yyyy-MM-dd HH}.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} %5p %c{1}:%L - %m%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="250MB"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="myLog" fileName="logs/my.log" filePattern="logs/app-%d{yyyy-MM-dd HH}.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} %5p %c{1}:%L - %m%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="250MB"/>
+            </Policies>
+        </RollingFile>
+
+    </Appenders>
+    <Loggers>
+
+        <Root level="error">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="allLog"/>
+        </Root>
+
+        <Logger name="com.chengqhuster" level="info">
+            <AppenderRef ref="myLog"/>
+        </Logger>
+
+    </Loggers>
+</Configuration>
