@@ -14,5 +14,5 @@ target
 .idea
 mvnw
 mvnw.cmd
-*/target/
-*/.mvn/
+*target/
+*.mvn/
